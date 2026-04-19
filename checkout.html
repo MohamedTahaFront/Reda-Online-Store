@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <!-- file CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <!-- icon -->
+    <link rel="icon" href="./img/icon.png" />
+    <title>Reda | Online Store</title>
+  </head>
+  <body>
+    <!--start cart -->
+    <div class="cart">
+      <div class="top_cart">
+        <h3>
+          Cart Items :
+          <span class="Count_item_cart">0</span>
+        </h3>
+        <span onclick="close_cart()" class="close_cart"
+          ><i class="fa-regular fa-circle-xmark"></i
+        ></span>
+      </div>
+      <div class="cart_items"></div>
+      <div class="bottom_cart">
+        <div class="total">
+          <p>subtotal</p>
+          <p class="price_cart_total">$0</p>
+        </div>
+        <div style=" gap: 20px; justify-content: center;"  class="button_cart">
+          <a href="./index.html" class="btn_cart btn">Home</a>
+          <span onclick="close_cart()" class="btn_cart trans_bg btn"
+            >Shop More</span
+          >
+        </div>
+      </div>
+    </div>
+    <!--end cart -->
+    <!-- strat header -->
+    <header>
+      <div class="top_header">
+        <div class="container">
+          <a href="#" class="logo"><img src="img/logo.png" alt="" /></a>
+          <form action="#" class="search_box">
+            <div class="select_box">
+              <select name="category" id="category">
+                <option value="All Categories">All Categories</option>
+                <option value="Electronics & Digita">
+                  Electronics & Digita
+                </option>
+                <option value="Phones & Tablet">Phones & Tablety</option>
+                <option value="Fashion & Clothings">Fashion & Clothings</option>
+                <option value="Telivsion & Monitor">Telivsion & Monitor</option>
+                <option value="Jewelry & Watches">Jewelry & Watches</option>
+                <option value="Washing Machine">Washing Machine</option>
+                <option value="Toys & Hobbies">Toys & Hobbies</option>
+              </select>
+            </div>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search for Products"
+              required
+            />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <div class="header_icons">
+            <div class="icon">
+              <a href="#">
+                <i class="fa-regular fa-heart"></i>
+                <span class="count count-favourite">0</span>
+              </a>
+            </div>
+            <div class="icon add_active">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="count count-item-header">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom_header">
+        <div class="container">
+          <nav class="nav">
+            <span class="open_nav"><i class="fa-solid fa-bars"></i></span>
+            <div class="category_nav">
+              <div class="category_btn">
+                <i class="fa-solid fa-bars"></i>
+                <p>Browse Category</p>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <div class="category_nav_list">
+                <a href="#">Top 10 Offers</a>
+                <a href="#">Electronics & Digita</a>
+                <a href="#">Phones & Tablet</a>
+                <a href="#">Fashion & Clothings</a>
+                <a href="#">Telivsion & Monitor</a>
+                <a href="#">Jewelry & Watches</a>
+                <a href="#">Toys & Hobbies</a>
+              </div>
+            </div>
+            <ul class="nav_links">
+              <span class="close_nav"
+                ><i class="fa-regular fa-circle-xmark"></i
+              ></span>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Accesories</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="login_signup btns">
+            <a href="#" class="btn"
+              >Login <i class="fa-solid fa-right-to-bracket"></i
+            ></a>
+            <a href="#" class="btn"
+              >Sign UP <i class="fa-solid fa-user-plus"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <section class="checkout">
+      <form action="">
+        <div class="container">
+          <div class="ordersummary">
+            <h1>Order Summary</h1>
+
+            <div class="items" id="checkoutItems">
+              
+            </div>
+
+            <div class="bottom_summary">
+              <div class="shop_table">
+                <p>Subtotal :</p>
+                <span class="subtotal_checkout"></span>
+              </div>
+
+              <div class="shop_table">
+                <p>Shipping :</p>
+                <span>$20.00</span>
+              </div>
+
+              <div class="shop_table">
+                <p>total :</p>
+                <span class="total_checkout">$325.00</span>
+              </div>
+
+              <div class="button_div">
+                <button type="submit">Place order</button>
+              </div>
+            </div>
+          </div>
+          <div class="input_info">
+            <div class="address">
+              <h2>Delivery Address</h2>
+              <div class="inputs">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Enter your email" required>
+  
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Enter your name" required>
+  
+                <label for="address">Address</label>
+                <input id="address" type="text" placeholder="Enter your Address" required>
+  
+                <label for="Phone">Phone</label>
+                <input id="Phone" type="number" placeholder="Enter your Phone" required>
+              </div>
+            </div>
+            <div class="coupon">
+              <h2>Coupon code</h2>
+              <div class="inputs">
+                <label for="coupon">Coupon code</label>
+                <input id="coupon" type="text" placeholder="Enter your coupon code" required>
+              </div>
+              <div class="btncoupon">
+                <button>Apply coupon</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- start footer -->
+    <footer>
+      <div class="container">
+        <div class="topFooter">
+          <div class="one">
+            <a href="#" class="logo">
+              <img src="./img/white_logo.png" alt="" />
+            </a>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi,
+              vero?
+            </p>
+            <div class="icons">
+              <a href="#"><i class="fa-solid fa-phone"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+          <div class="two">
+            <h2>Find It Fast</h2>
+            <div class="footer_links">
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Laptops & Computers
+              </a>
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Smart Phones &
+                Tablets</a
+              >
+              <a href="#"><i class="fa-solid fa-caret-right"></i> TV & Audio</a>
+              <a href="#"><i class="fa-solid fa-caret-right"></i> Appliances</a>
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Jewelry & Watches</a
+              >
+            </div>
+          </div>
+          <div class="three">
+            <h2>Quick Links</h2>
+            <div class="footer_links">
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Your Account
+              </a>
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Returns & Exchanges</a
+              >
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Shipping & Delivery</a
+              >
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Estimated Delivery
+                Time</a
+              >
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Purchase Hisotry</a
+              >
+            </div>
+          </div>
+          <div class="four">
+            <h2>Service us</h2>
+            <div class="footer_links">
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Support Center</a
+              >
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Term & Conditions</a
+              >
+              <a href="#"
+                ><i class="fa-solid fa-caret-right"></i> Privacy Policy</a
+              >
+              <a href="#"><i class="fa-solid fa-caret-right"></i> Help</a>
+              <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="bottomFooter">
+      <div class="container">
+        <h2>© <span>Reda Store</span>. All Rights Reserved.</h2>
+        <div class="imgFooter">
+          <img src="./img/payment_method.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- end footer -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/items_home.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
